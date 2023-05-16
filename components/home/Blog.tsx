@@ -214,8 +214,10 @@ function CityImage({ alt, cityNumber }: { alt: string; cityNumber: number }) {
     <Image
       src={`/static/img/city-${cityNumber}.jpg`}
       alt={alt}
-      width={380}
-      height={0}
+      width="0"
+      height="0"
+      sizes="100vw"
+      style={{ width: "100%", height: "auto" }}
     />
   );
 }

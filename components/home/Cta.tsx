@@ -15,7 +15,7 @@ export default function Cta() {
           <form action="">
             <div className="inputBox">
               <div className="input">
-                <span>Votre email</span>
+                <span>Votre mail</span>
                 <input type="email" placeholder="Enter your email" />
               </div>
             </div>

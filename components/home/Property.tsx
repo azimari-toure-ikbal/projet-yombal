@@ -443,8 +443,10 @@ function AuthorImage() {
     <Image
       src="/static/img/author.jpg"
       alt="William Seklo"
-      width={50}
-      height={50}
+      width="0"
+      height="0"
+      sizes="100vw"
+      style={{ width: "100%", height: "auto" }}
     />
   );
 }
@@ -460,9 +462,10 @@ function PropertyImage({
     <Image
       src={`/static/img/property-${propertyNumber}.jpg`}
       alt={alt}
-      width={400}
-      height={0}
-      priority={true}
+      width="0"
+      height="0"
+      sizes="100vw"
+      style={{ width: "100%", height: "auto" }}
     />
   );
 }
