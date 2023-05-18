@@ -24,14 +24,17 @@ export default function Hero() {
         </div>
 
         <figure className="hero_banner">
-          <Image
-            src="/static/img/hero-banner.png"
-            alt="Modern house model"
-            className="dark:invert"
-            width={450}
-            height={450}
-            priority={true}
-          />
+          {/* <div style={{width: '100%', height: '100%', position: 'relative'}}> */}
+            <Image
+              src="/static/img/hero-banner.png"
+              alt="Modern house model"
+              className="dark:invert"
+              fill
+              objectFit='contain'
+              priority={true}
+            />
+          {/* </div> */}
+
         </figure>
       </div>
     </section>

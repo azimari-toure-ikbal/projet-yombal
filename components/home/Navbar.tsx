@@ -53,7 +53,7 @@ export default function Navbar() {
             <li>
               <a href="mailto:info@Yombal.com" className="header_top_link">
                 <IoMailOutline />
-                <span>info@yombal.com</span>
+                <address>info@yombal.com</address>
               </a>
             </li>
             <li>
@@ -98,27 +98,28 @@ export default function Navbar() {
       <div className="header_bottom">
         <div className="container">
           <a href="#" className="logo">
-            <Image
-              src="/static/img/logo.png"
-              alt="Yombal Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            <div style={{width: '100%', height: '100%', position: 'relative'}}>
+              <Image
+                src="/static/img/logo.png"
+                alt="Yombal Logo"
+                className="dark:invert"
+                fill
+                objectFit='contain'
+              />
+            </div>
           </a>
 
           <nav className="navbar" data-navbar>
-            <div className="navbar-top">
+            <div className="navbar_top">
               <a href="#" className="logo">
-                <Image
-                  src="/static/img/logo.png"
-                  alt="Yombal Logo"
-                  className="dark:invert"
-                  width={100}
-                  height={24}
-                  priority
-                />
+                <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                  <Image
+                    src="/static/img/logo.png"
+                    alt="Yombal Logo"
+                    fill
+                    objectFit='contain'
+                  />
+                </div>
               </a>
 
               <button
@@ -173,21 +174,21 @@ export default function Navbar() {
 
           <div className="header_bottom_actions">
             <button className="header_bottom_actions_btn" aria-label="Search">
-              <IoSearchOutline />
+              <IoSearchOutline className="ion_icon" />
               {/* <ion-icon name="search-outline"></ion-icon> */}
 
               <span>Search</span>
             </button>
 
             <button className="header_bottom_actions_btn" aria-label="Profile">
-              <IoPersonOutline />
+              <IoPersonOutline className="ion_icon" />
               {/* <ion-icon name="person-outline"></ion-icon> */}
 
               <span>Profile</span>
             </button>
 
             <button className="header_bottom_actions_btn" aria-label="Cart">
-              <IoCartOutline />
+              <IoCartOutline className="ion_icon" />
               {/* <ion-icon name="cart-outline"></ion-icon> */}
 
               <span>Cart</span>
@@ -198,7 +199,7 @@ export default function Navbar() {
               data-nav-open-btn
               aria-label="Open Menu"
             >
-              <IoMenuOutline onClick={toggleNavbar} />
+              <IoMenuOutline onClick={toggleNavbar} className="ion_icon" />
               {/* <ion-icon name="menu-outline"></ion-icon> */}
 
               <span>Menu</span>

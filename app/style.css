@@ -7,9 +7,6 @@
  */
 
 
-
-
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -68,6 +65,7 @@
    */
 
   --section-padding: 100px;
+  --section-padding-sm: 20px 100px;
 
   /**
    * shadow
@@ -105,7 +103,7 @@ a,
 img,
 span,
 button,
- { display: block; }
+.ion_icon { display: block; }
 
 button {
   border: none;
@@ -117,7 +115,7 @@ button {
 
 address { font-style: normal; }
 
- { pointer-events: none; }
+.ion_icon { pointer-events: none; }
 
 html {
   font-family: var(--ff-nunito-sans);
@@ -315,7 +313,7 @@ button, a { transition: var(--transition); }
 
 .header_top_link:is(:hover, :focus) { color: var(--green-soda); }
 
-.header_top_link  {
+.header_top_link .ion_icon {
   color: var(--green-soda);
   font-size: 15px;
   --ionicon-stroke-width: 60px;
@@ -374,7 +372,7 @@ button, a { transition: var(--transition); }
   transition: 0.25s ease-out;
 }
 
-.navbar-top {
+.navbar_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -383,9 +381,9 @@ button, a { transition: var(--transition); }
   margin-bottom: 25px;
 }
 
-.navbar-top .logo img { width: 200px; }
+.navbar_top .logo, .container .logo { width: 180px; height: 45px; }
 
-.nav_close_btn  {
+.nav_close_btn .ion_icon {
   font-size: 20px;
   --ionicon-stroke-width: 45px;
   padding: 5px;
@@ -429,15 +427,17 @@ button, a { transition: var(--transition); }
   z-index: 3;
 }
 
-.header_bottom_actions_btn  {
+
+.header_bottom_actions_btn .ion_icon {
   color: hsl(0, 0%, 10%);
   font-size: 20px;
   margin-inline: auto;
   margin-bottom: 5px;
+  --ionicon-stroke-width: 40px;
   transition: var(--transition);
 }
 
-.header_bottom_actions_btn:is(:hover, :focus)  { color: var(--green-soda); }
+.header_bottom_actions_btn:is(:hover, :focus) .ion_icon { color: var(--green-soda); }
 
 .header_bottom_actions_btn span {
   color: var(--cadet);
@@ -461,6 +461,13 @@ button, a { transition: var(--transition); }
 
 .hero_content { margin-bottom: 60px; }
 
+.hero_banner{
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
+  position: relative;
+}
+
 .hero_subtitle {
   display: flex;
   justify-content: flex-start;
@@ -469,7 +476,7 @@ button, a { transition: var(--transition); }
   margin-bottom: 20px;
 }
 
-.hero_subtitle  { color: var(--green-soda); }
+.hero_subtitle .ion_icon { color: var(--green-soda); }
 
 .hero_subtitle span {
   color: var(--dark-jungle-green);
@@ -501,6 +508,9 @@ button, a { transition: var(--transition); }
 .about_banner {
   position: relative;
   margin-bottom: 40px;
+  height: 100%;
+  min-height: 700px;
+  width: 100%;
 }
 
 .about_banner > img {
@@ -549,7 +559,7 @@ button, a { transition: var(--transition); }
   place-items: center;
 }
 
-.about_item-icon  {
+.about_item-icon .ion_icon {
   color: var(--green-soda);
   font-size: 18px;
 }
@@ -706,7 +716,7 @@ button, a { transition: var(--transition); }
   gap: 4px;
 }
 
-.banner_actions_btn  { font-size: 16px; }
+.banner_actions_btn .ion_icon { font-size: 16px; }
 
 .banner_actions_btn:first-child { margin-right: auto; }
 
@@ -762,9 +772,9 @@ button, a { transition: var(--transition); }
   margin-right: 20px;
 }
 
-.property_card .card_item :is(strong, ) { display: inline-block; }
+.property_card .card_item :is(strong, .ion_icon) { display: inline-block; }
 
-.property_card .card_item  {
+.property_card .card_item .ion_icon {
   margin-left: 2px;
   margin-bottom: -2px;
 }
@@ -878,7 +888,7 @@ button, a { transition: var(--transition); }
   font-size: 28px;
 }
 
-.features_card .card_icon  { --ionicon-stroke-width: 20px; }
+.features_card .card_icon .ion_icon { --ionicon-stroke-width: 20px; }
 
 .features_card .card_title {
   color: var(--dark-jungle-green);
@@ -954,7 +964,7 @@ button, a { transition: var(--transition); }
   transition: var(--transition);
 }
 
-.city_card :is(.card_meta_link, .publish_date)  { color: var(--green-soda); }
+.city_card :is(.card_meta_link, .publish_date) .ion_icon { color: var(--green-soda); }
 
 .city_card .card_meta_link:is(:hover, :focus) { color: var(--green-soda); }
 
@@ -986,6 +996,114 @@ button, a { transition: var(--transition); }
   text-transform: uppercase;
 }
 
+/*-----------------------------------*\
+  #FORMS
+\*-----------------------------------*/
+
+.form_container{
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: center; */
+  padding: 20px 0;
+}
+
+.login_form { 
+  padding-block: var(--section-padding); 
+}
+
+.form_section_subtitle {
+  color: var(--green-soda);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  padding: 5px 20px;
+  background: hsla(140, 100%, 62%, 0.1);
+  width: max-content;
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-bottom: 15px;
+}
+
+.form_card{
+  /* max-width: 40rem; */
+  align-self: center;
+  
+ width: 75%;
+}
+
+.form_card form{
+  /* min-width: 15rem; */
+  width: 100%;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  border: .1rem solid rgba(0,0,0,.2);
+  background: var(--misty-green);
+  padding: 1rem;
+}
+
+
+.form_card form .inputBox{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form_card form .inputBox .input{
+  width: 100%;
+}
+
+.form_card form .inputBox .checkbox span,
+.form_card form .inputBox .input span{
+  display: block;
+  padding: .5rem 0;
+  font-size: 1rem;
+  color: var(--light-color);
+
+}
+.form_card form .inputBox .checkbox{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.form_card form .inputBox .input input,
+.form_card form .inputBox .input select,
+.form_card form .inputBox .input textarea{
+  appearance: none;
+  background: var(--white);
+  border-radius: .5rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: var(--black);
+  text-transform: none;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form_card form .inputBox .input .select_custom_dropdown{
+  position: relative;
+  left: 90%;
+  bottom: 40%;
+}
+
+.form_card form .inputBox .input input:focus,
+.form_card form .inputBox .input textarea:focus{
+  border: .1rem solid var(--green-soda);
+  
+}
+
+.form_card form .inputBox .input textarea{
+  height: 20rem;
+  resize: none;
+}
+
+.form_card form .btn{
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
 
 
 
@@ -1114,18 +1232,344 @@ button, a { transition: var(--transition); }
   
 }
 
-.order form .inputBox .input textarea{
-  height: 20rem;
+.cta_card form .inputBox .input textarea{
+  height: 10rem;
   resize: none;
 }
 
-.order form .btn{
+.cta_card form .btn{
   cursor: pointer;
   margin-top: 0;
 }
 
+/*-----------------------------------*\
+  #CAROUSSEL
+\*-----------------------------------*/
+  
+   .caroussel{
+    background: var(--cultured-2);
+    padding-block: var(--section-padding-sm);
+    padding-bottom: 0px;
+
+   }
+
+   .caroussel .container{
+    align-items: center;
+    max-width: 1200px;
+    height: 30rem;
+   }
+
+   .caroussel .container .caroussel_header{
+    display: flex;
+    flex-direction: column;
+   }
 
 
+   .caroussel .container .caroussel_content{
+    height: 100%;
+   }
+
+   .caroussel_header .main_title{
+      display: flex;
+      justify-content: start;
+      gap: 10px;
+      align-items: center;
+   }
+
+   .caroussel_header .details{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* height: 65px; */
+   }
+
+   .caroussel_header .details div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    line-height: 20px;
+    gap: .5rem;
+
+   }
+
+   .caroussel_header .iconified_text{
+    display: flex;
+    gap: 5px;
+   }
+
+   .caroussel_header .social_links p{
+      line-height: 17px;
+      text-decoration: underline;
+      display: flex;
+      gap: 6px;
+   }
+
+   .caroussel_header .main_title .ion_icon {
+    font-size: 28px;
+   }
+
+   .caroussel_grid{
+    position: relative;
+    margin-top: 20px;
+    display: grid;
+    min-height: 400px;
+    grid-template-areas: 
+    "a a b c"
+    "a a d e"
+    ;
+    padding: 10px 0px;
+    gap: 5px;
+
+   }
+
+   .caroussel_grid .grid_item{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+   }
+
+   /* .caroussel_grid .grid_item :hover{
+      /* background-color: black; */
+  /* } */
+
+   .caroussel_grid :nth-child(1){
+    grid-area: a;
+    border-radius: .5rem 0 0 .5rem;
+   }
+
+   .caroussel_grid :nth-child(2){
+    grid-area: b;
+   }
+
+   .caroussel_grid :nth-child(3){
+    grid-area: c;
+    border-radius: 0 .5rem 0 0;
+   }
+
+   .caroussel_grid :nth-child(4){
+    grid-area: d;
+   }
+
+   .caroussel_grid :nth-child(5){
+    grid-area: e;
+    border-radius: 0 0 .5rem 0;
+   }
+
+   .caroussel .caroussel_grid .grid_button{
+    background-color: #eee;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: .5rem;
+    border: 1px solid var(--dark-jungle-green);
+    padding: 5px;
+    font-weight: bold;
+   }
+
+
+/*-----------------------------------*\
+  #PROPERTY ABOUT
+\*-----------------------------------*/
+  
+.property_about{
+  background: var(--cultured-2);
+  padding-block: var(--section-padding-sm);
+ }
+
+ .property_about .container{
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 60% 40%;
+ }
+
+ .property_about .container .property_details{
+  /* background-color: red; */
+  margin: 20px;
+ }
+
+ .container .property_details .details_container{
+  margin: 30px 0;
+ }
+
+ .property_details .details_container p{
+  text-align: start;
+ }
+
+ .container .property_details .low_bordered{
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.274);
+ }
+
+ .property_details .main_info{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+ }
+
+ .property_details .main_info .info_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .main_info .info_header img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+ }
+
+ .property_details .main_info .info_cards{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+ }
+
+ .main_info .info_cards div{
+  background-color: var(--white);
+  border-radius: .5rem;
+  border: 1px solid rgba(128, 128, 128, 0.26);
+  padding: .5rem 2rem;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1rem;
+  gap: 5px;
+  text-align: center;
+ }
+
+ .info_cards div .ion_icon{
+  font-size: 1.7rem;
+ }
+
+ .property_about .container .property_booking{
+  display: flex;
+  justify-content: flex-end;
+ }
+   
+ 
+ .property_booking .booking_card{
+  min-height: 500px;
+  width: 80%;
+  margin: 10px;
+  background-color: var(--white);
+  border: .01px solid rgba(128, 128, 128, 0.342);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  
+ }
+
+ .room_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+ }
+
+ .room_info div{
+  display: flex;
+  gap: 10px;
+ }
+
+ .room_info .ion_icon{
+  font-size: 1.7rem;
+ }
+
+ .owner_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ }
+ 
+ .owner_info .owner_card{
+  align-self: center;
+  background-color: rgba(128, 128, 128, 0.13);
+  width: 95%;
+  min-height: 800px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 35px;
+ }
+
+ .owner_card .presentation{
+  background-color: white;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  padding: 50px 0px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ }
+
+ .presentation .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid rgba(128, 128, 128, 0.192);
+    padding-right: 20px;
+ }
+
+ .presentation .profile img{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+ }
+
+ .presentation .ratings{
+  padding-left: 20px;
+ }
+
+ .presentation .ratings div .buffered_text{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+ }
+
+ .buffered_text .ion_icon{
+  padding-bottom: 3.5px;
+ }
+
+ .owner_about div{
+  padding: 0 70px;
+ }
+ .owner_about .more{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ }
+
+ .owner_about .more span{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px;
+ }
+
+ .more span .ion_icon{
+  font-size: 1.7rem;
+ }
+
+ .owner_about .desc{
+  margin-top: 30px;
+ }
+ 
 
 /*-----------------------------------*\
   #FOOTER
@@ -1169,7 +1613,7 @@ button, a { transition: var(--transition); }
   gap: 10px;
 }
 
-.contact_link  { font-size: 18px; }
+.contact_link .ion_icon { font-size: 18px; }
 
 .contact_link :is(address, span) {
   font-size: var(--fs-5);
@@ -1289,6 +1733,15 @@ button, a { transition: var(--transition); }
 
   /* .cta_card { --fs-2: 1.5rem; } */
 
+    /**
+   * FORMS
+   */
+   .form_card form .inputBox .input .select_custom_dropdown{
+    position: relative;
+    left: 95%;
+    bottom: 40%;
+  }
+    
 
 
   /**
@@ -1303,7 +1756,172 @@ button, a { transition: var(--transition); }
 
 }
 
+/**
+ * responsive for smaller than 768px screen
+ */
 
+ @media (max-width: 425px) {
+  .caroussel_header .details .ratings :nth-child(2){
+    display: none;
+   }
+  
+   .caroussel_header .details div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: .5rem;
+   }
+  
+ }
+
+/**
+ * responsive for smaller than 768px screen
+ */
+
+ @media (max-width: 768px) {
+  /*-----------------------------------*\
+  #CAROUSSEL RESPONSIVE
+\*-----------------------------------*/
+  
+.caroussel{
+  background: var(--cultured-2);
+  padding-block: 0;
+
+}
+
+.caroussel .container{
+  align-items: center;
+  height: 30rem;
+  width: 100%;
+  margin: 0px;
+  max-width: 1000px;
+  padding: 0;
+  display: flex;
+  flex-direction:column-reverse;
+ }
+
+ .caroussel .container .caroussel_header{
+  padding: 15px 20px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+ }
+
+
+ .caroussel .container .caroussel_content{
+  height: 100%;
+ }
+
+ .caroussel_header .main_title{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
+    font-size: .7rem;
+ }
+
+ .caroussel_header .details{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: flex-start;
+  width: 100%;
+
+  /* height: 65px; */
+ }
+
+ .caroussel_header .details div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 20px;
+  gap: .5rem;
+
+ }
+
+ .caroussel_header .iconified_text{
+  display: flex;
+  gap: 5px;
+ }
+
+ .caroussel_header .social_links p{
+    line-height: 17px;
+    text-decoration: underline;
+    display: flex;
+    gap: 6px;
+ }
+
+ .caroussel_header .main_title .ion_icon {
+  font-size: 28px;
+ }
+
+ .caroussel_grid{
+  position: relative;
+  display: grid;
+  grid-template-areas: "a";
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+ }
+
+ .caroussel_grid .grid_item{
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+ }
+
+ /* .caroussel_grid .grid_item :hover{
+    /* background-color: black; */
+/* } */
+
+ .caroussel_grid :nth-child(1){
+  grid-area: a;
+  border-radius: 0rem;
+ }
+
+ .caroussel_grid :nth-child(2){
+  display: none;
+ }
+
+ .caroussel_grid :nth-child(3){
+  display: none;
+
+  border-radius: 0 .5rem 0 0;
+ }
+
+ .caroussel_grid :nth-child(4){
+  display: none;
+
+ }
+
+ .caroussel_grid :nth-child(5){
+  display: none;
+  border-radius: 0 0 .5rem 0;
+ }
+
+ .caroussel .caroussel_grid .grid_button{
+  background-color: #eee;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: .5rem;
+  border: 1px solid var(--dark-jungle-green);
+  padding: 5px;
+  font-weight: bold;
+ }
+ 
+ }
 
 
 
@@ -1371,7 +1989,7 @@ button, a { transition: var(--transition); }
     align-items: center;
   }
 
-  .header_bottom_actions_btn  { margin-bottom: 0; }
+  .header_bottom_actions_btn .ion_icon { margin-bottom: 0; }
 
   .header_bottom_actions_btn span { display: none; }
 
@@ -1381,9 +1999,7 @@ button, a { transition: var(--transition); }
     height: 50px;
     box-shadow: var(--shadow-2);
   }
-
-
-
+  
   /**
    * HERO
    */
@@ -1404,6 +2020,33 @@ button, a { transition: var(--transition); }
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+
+    /**
+   * OWNER CARD
+   */
+
+
+  .owner_card .presentation{
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 80%;
+    padding: 50px 0px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   }
+
+   .owner_about .more span{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    gap: 5px;
+   }
 
 
 
@@ -1504,6 +2147,7 @@ button, a { transition: var(--transition); }
    * REUSED STYLE
    */
 
+
   .container { max-width: 970px; }
 
   .btn { padding: 15px 40px; }
@@ -1516,6 +2160,24 @@ button, a { transition: var(--transition); }
 
   .header_top_list,
   .header_top .wrapper { gap: 30px; }
+
+    /**
+   * SINGLE VIEW MAIN INFO
+   */
+
+  .main_info .info_cards div{
+    background-color: var(--white);
+    border-radius: .5rem;
+    border: 1px solid rgba(128, 128, 128, 0.26);
+    padding: 2rem;
+    max-height: 100px;
+    flex-direction: row;
+    display: flex;
+    line-height: 1.7rem;
+    gap: 5px;
+    text-align: center;
+   }
+  
 
 
 
@@ -1607,6 +2269,7 @@ button, a { transition: var(--transition); }
   .cta_card :is(.card_content, .cta_btn) { margin: 0; }
 
 
+   
 
   /**
    * FOOTER
@@ -1670,7 +2333,7 @@ button, a { transition: var(--transition); }
   .header_bottom { padding-block: 30px; }
 
   .header_bottom_actions_btn:last-child,
-  .navbar-top,
+  .navbar_top,
   .overlay { display: none; }
 
   .navbar,

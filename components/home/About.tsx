@@ -16,8 +16,8 @@ export default function About() {
             src="/static/img/about-banner-1.png"
             alt="Houses interior"
             className="dark:invert"
-            width={650}
-            height={650}
+            fill
+            objectFit='contain'
             priority={true}
           />
           {/* <img src="./assets/images/about-banner-1.png" alt="House interior"> */}
