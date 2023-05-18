@@ -3,17 +3,14 @@ import {
   Blog,
   Cta,
   Hero,
-  Navbar,
   Property,
   Features,
   Service,
-  Footer,
 } from "@/components/home/HomeSections";
 
 export default function HomePage({}) {
   return (
     <>
-      <Navbar />
       <main>
         <article>
           <Hero />
@@ -31,7 +28,6 @@ export default function HomePage({}) {
           <Cta />
         </article>
       </main>
-      <Footer />
     </>
   );
 }
