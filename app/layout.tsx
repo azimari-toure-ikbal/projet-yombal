@@ -1,7 +1,6 @@
 import Navbar from "@/components/core/Navbar";
 import "./style.css";
 import { Nunito_Sans } from "next/font/google";
-import Footer from "@/components/core/Footer";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -30,13 +29,7 @@ export default function RootLayout({
         ></link>
         {/* <link rel="icon" href="/favicon.svg" /> */}
       </head>
-      <body className={nunitoSans.className}>
-        {/* Pour le moment j'importe sans utiliser le sections car je me dis que des components dans le layout */}
-        {/* ne devraint pas forcément provenir du "Sections" d'un component */}
-        <Navbar />
-          {children}
-        <Footer />
-      </body>
+      <body className={nunitoSans.className}>{children}</body>
     </html>
   );
 }

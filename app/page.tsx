@@ -3,11 +3,9 @@ import {
   Blog,
   Cta,
   Hero,
-  Navbar,
   Property,
   Features,
   Service,
-  Footer,
 } from "@/components/home/HomeSections";
 
 // Tu peux aussi override les metadata sur une page une particulier :
