@@ -16,9 +16,10 @@ export default function About() {
             src="/static/img/about-banner-1.png"
             alt="Houses interior"
             className="dark:invert"
-            fill
-            objectFit='contain'
-            priority={true}
+            width="0"
+            height="0"
+            sizes="300vw"
+            style={{ width: "100%", height: "auto" }}
           />
           {/* <img src="./assets/images/about-banner-1.png" alt="House interior"> */}
 
@@ -26,8 +27,10 @@ export default function About() {
             src="/static/img/about-banner-2.jpg"
             alt="House interior"
             className="dark:invert abs-img"
-            width={180}
-            height={180}
+            width="0"
+            height="0"
+            sizes="55vw"
+            style={{ width: "100%", height: "auto" }}
           />
           {/* <img src="./assets/images/about-banner-2.jpg" alt="House interior" className="abs-img"> */}
         </figure>
