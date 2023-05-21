@@ -1,8 +1,9 @@
 import "./style.css";
 import { Nunito_Sans } from "next/font/google";
 // Je me doute qu'il faudrait les importer autrement peut-être mais je garde ça comme ça pour le moment
-import Navbar from "@/components/core/Navbar";
-import Footer from "@/components/core/Footer";
+// import Navbar from "@/components/core/Navbar";
+// import Footer from "@/components/core/Footer";
+import { Navbar, Footer } from "@/components/home/HomeSections";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -32,10 +33,10 @@ export default function RootLayout({
         {/* <link rel="icon" href="/favicon.svg" /> */}
       </head>
       <body className={nunitoSans.className}>
-        <Navbar/>
-          {children}
-        <Footer/>
-        </body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
