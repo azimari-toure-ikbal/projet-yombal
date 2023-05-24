@@ -98,15 +98,15 @@ export default function Navbar() {
       <div className="header_bottom">
         <div className="container">
           <a href="#" className="logo">
-            <div style={{width: '100%', height: '100%', position: 'relative'}}>
+            {/* <div style={{width: '100%', height: '100%', position: 'relative'}}> */}
               <Image
                 src="/static/img/logo.png"
                 alt="Yombal Logo"
                 className="dark:invert"
-                fill
-                objectFit='contain'
+                width="195"
+                height="45"
               />
-            </div>
+            {/* </div> */}
           </a>
 
           <nav className="navbar" data-navbar>
