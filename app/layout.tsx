@@ -1,11 +1,11 @@
 import { Navbar, Footer } from "./core/components/CoreSections";
 import "./style.css";
 import { Nunito_Sans } from "next/font/google";
-// Je me doute qu'il faudrait les importer autrement peut-être mais je garde ça comme ça pour le moment
-// import Navbar from "@/components/core/Navbar";
-// import Footer from "@/components/core/Footer";
 
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export const metadata = {
   title: "Yombal - Trouvez la maison de vos rêves.",
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -29,7 +29,7 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
           rel="stylesheet"
-        ></link>
+        ></link> */}
         {/* <link rel="icon" href="/favicon.svg" /> */}
       </head>
       <body className={nunitoSans.className}>
